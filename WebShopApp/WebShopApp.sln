@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShopApp", "WebShopApp\WebShopApp.csproj", "{B5B577A3-D20D-4839-A09C-58825476A2D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShopApp.Infrastructure", "WebShopApp.Infrastructure\WebShopApp.Infrastructure.csproj", "{2E598FA6-91A8-413A-80AC-54120F29F674}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShopApp.Core", "WebShopApp.Core\WebShopApp.Core.csproj", "{3CA55D16-885D-430E-AB3E-FAE7536A2F0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5B577A3-D20D-4839-A09C-58825476A2D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5B577A3-D20D-4839-A09C-58825476A2D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5B577A3-D20D-4839-A09C-58825476A2D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5B577A3-D20D-4839-A09C-58825476A2D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E598FA6-91A8-413A-80AC-54120F29F674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E598FA6-91A8-413A-80AC-54120F29F674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E598FA6-91A8-413A-80AC-54120F29F674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E598FA6-91A8-413A-80AC-54120F29F674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CA55D16-885D-430E-AB3E-FAE7536A2F0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CA55D16-885D-430E-AB3E-FAE7536A2F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CA55D16-885D-430E-AB3E-FAE7536A2F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CA55D16-885D-430E-AB3E-FAE7536A2F0B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D1CF4EEE-2C83-498A-90CA-682EF236F8E2}
+	EndGlobalSection
+EndGlobal
