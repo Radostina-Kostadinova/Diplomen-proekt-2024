@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -15,4 +15,8 @@
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.24" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\TicketsHarbourApp.Infrastructure\TicketsHarbourApp.Infrastructure.csproj" />
+	</ItemGroup>
+	
 </Project>

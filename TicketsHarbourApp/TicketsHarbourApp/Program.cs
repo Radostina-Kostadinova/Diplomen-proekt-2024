@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
+using TicketsHarbourApp.Core.Contracts;
+using TicketsHarbourApp.Core.Services;
 using TicketsHarbourApp.Infastructure.Data;
 using TicketsHarbourApp.Infrastructure.Data.Domain;
+using TicketsHarbourApp.Infrastructure.Data.Infrastructure;
 
 namespace TicketsHarbourApp
 {
@@ -15,7 +17,8 @@ namespace TicketsHarbourApp
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(connectionString));
+            options.UseLazyLoadingProxies()   
+            .UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
@@ -28,10 +31,16 @@ namespace TicketsHarbourApp
                 options.Password.RequiredLength = 5;
 
             })
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddTransient<ILocationService,LocationService>();
+            builder.Services.AddTransient<IConcertService, ConcertService>();
+
+
             var app = builder.Build();
+            app.PrepareDatabase();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
