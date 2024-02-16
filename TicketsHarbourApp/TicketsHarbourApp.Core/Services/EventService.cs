@@ -26,17 +26,16 @@ namespace TicketsHarbourApp.Core.Services
             Event item = new Event
             {
                 Concert = _context.Concerts.Find(concertId),
-                Location =_context.Locations.Find(locationId),
-                
-                Beginning= beginning,
-                Price=price,
-                Quantity=quantity,
-                Discount=discount,
-           
+                Location = _context.Locations.Find(locationId),
+
+                Beginning = beginning,
+                Price = price,
+                Quantity = quantity,
+                Discount = discount,
+
             };
             _context.Events.Add(item);
             return _context.SaveChanges() != 0;
-
 
         }
 

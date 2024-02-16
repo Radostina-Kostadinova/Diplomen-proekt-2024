@@ -39,6 +39,7 @@ namespace TicketsHarbourApp
             builder.Services.AddTransient<IConcertService, ConcertService>();
             builder.Services.AddTransient<IEventService, EventService>();
             builder.Services.AddTransient<IConcertService, ConcertService>();
+            builder.Services.AddTransient<IOrderService, OrderService>();
 
             var app = builder.Build();
             app.PrepareDatabase();
