@@ -119,8 +119,8 @@ namespace TicketsHarbourApp.Controllers
             UserId = x.UserId,
             User = x.User.UserName,
             EventId = x.EventId,
-            //Event = x.Event.Name
-            //Picture= x. Event.Picture,
+            Event = x.Event.Concert.ConcertName,
+            Picture= x. Event.Concert.Picture,
             OrderDate = x.OrderDate.ToString("dd-MMM-yyyy hh:mm", CultureInfo.InvariantCulture),
             Quantity = x.Quantity,
             Price = x.Price,
