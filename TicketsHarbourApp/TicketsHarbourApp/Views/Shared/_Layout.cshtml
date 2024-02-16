@@ -27,10 +27,12 @@
                         </li>
 
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Concert" asp-action="Index">Concerts</a>
+                        </li>
+                        @*<li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Event" asp-action="Index">Events</a>
                         </li>
-
-
+                        *@
 
                         @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
 

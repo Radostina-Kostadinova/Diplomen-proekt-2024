@@ -19,7 +19,7 @@ namespace TicketsHarbourApp.Infrastructure.Data.Domain
 
         [Required]
         [ForeignKey("Event")]
-        public int EvenId { get; set; }
+        public int EventId { get; set; }
         public virtual Event Event { get; set; } = null!;
 
 
@@ -39,7 +39,6 @@ namespace TicketsHarbourApp.Infrastructure.Data.Domain
                 this.Price * this.Discount / 100;
             }
         }
-
 
     }
 }

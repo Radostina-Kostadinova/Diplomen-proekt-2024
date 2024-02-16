@@ -107,14 +107,14 @@ namespace TicketsHarbourApp.Infrastructure.Data.Infrastructure
 
             dataConcert.Concerts.AddRange(new[]
             {
-           new Concert{ConcertName="MolecAlbum", Performers="Molec",Description=" 12 February"   },
+           new Concert{ConcertName="MolecAlbum", Performers="Molec",Description=" 12 February", Picture="" },
            new Concert{ConcertName="Virgo & TRF Album",Performers="Virgo & TRF ",Description="18 March" },
            new Concert{ConcertName="Maneskin Album", Performers="Maneskin",Description="08 April" },
            new Concert{ConcertName="Ari Abdul Album", Performers="Ari Abdul",Description="25 May" },
             });
             dataConcert.SaveChanges();
         }
-
+        //SUS ili bez Picture
    
 
     }

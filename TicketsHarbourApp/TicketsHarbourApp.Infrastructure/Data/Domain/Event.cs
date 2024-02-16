@@ -24,7 +24,7 @@ namespace TicketsHarbourApp.Infrastructure.Data.Domain
 
 
         [Required]
-        public DateTime Begining { get; set; }
+        public DateTime Beginning { get; set; }
 
         [Range(0, 300)]
         public decimal Price { get; set; }
@@ -35,6 +35,7 @@ namespace TicketsHarbourApp.Infrastructure.Data.Domain
 
         [Range(0, 99)]
         public decimal Discount { get; set; }
+
 
         public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 

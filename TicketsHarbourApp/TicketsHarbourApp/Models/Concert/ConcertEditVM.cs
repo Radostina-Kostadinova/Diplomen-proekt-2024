@@ -1,35 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace TicketsHarbourApp.Infrastructure.Data.Domain
+namespace TicketsHarbourApp.Models.Concert
 {
-    public class Concert
+    public class ConcertEditVM
     {
+        [Key]
         public int Id { get; set; }
 
         [Required]
         [MaxLength(30)]
+        [Display(Name = "Concert Name")]
         public string ConcertName { get; set; } = null!;
 
-
         [Required]
         [MaxLength(200)]
+        [Display(Name = "Performers")]
         public string Performers { get; set; } = null!;
 
+
         [Required]
         [MaxLength(200)]
+        [Display(Name = "Description")]
         public string Description { get; set; } = null!;
 
 
         [Required]
+        [Display(Name = "Picture")]
         public string Picture { get; set; } = null!;
 
-
-        public virtual IEnumerable<Event> Events { get; set; } = new List<Event>();
 
     }
 }

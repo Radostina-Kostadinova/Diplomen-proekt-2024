@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using TicketsHarbourApp.Core.Contracts;
 using TicketsHarbourApp.Models;
 
 namespace TicketsHarbourApp.Controllers
