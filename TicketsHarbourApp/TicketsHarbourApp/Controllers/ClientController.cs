@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using TicketsHarbourApp.Core.Contracts;
+using TicketsHarbourApp.Core.Services;
 using TicketsHarbourApp.Infrastructure.Data.Domain;
 using TicketsHarbourApp.Models.Client;
 
@@ -10,9 +12,12 @@ namespace TicketsHarbourApp.Controllers
 
 
         private readonly UserManager<ApplicationUser> _userManager;
-        public ClientController(UserManager<ApplicationUser> userManager)
+        private readonly IOrderService _orderService;
+
+        public ClientController(UserManager<ApplicationUser> userManager, IOrderService orderService)
         {
             this._userManager = userManager;
+            this._orderService = orderService;
         }
 
 
@@ -47,6 +52,52 @@ namespace TicketsHarbourApp.Controllers
         }
 
 
+        // GET: ClientController/Details/5
+        public ActionResult Details(int id)
+        {
+            return View();
+        }
+
+        // GET: ClientController/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+        // POST: ClientController/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(IFormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: ClientController/Edit/5
+        public ActionResult Edit(int id)
+        {
+            return View();
+        }
+
+        // POST: ClientController/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, IFormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
 
         // GET: ClientController/Delete/5 
         public ActionResult Delete(string id)
@@ -56,7 +107,11 @@ namespace TicketsHarbourApp.Controllers
             {
                 return NotFound();
             }
-
+            var listOfOrders = _orderService.GetOrdersByUser(id);
+            if (listOfOrders.Count > 0) 
+            {
+                return RedirectToAction("Denied");
+            }
             ClientDeleteVM userToDelete = new ClientDeleteVM()
             {
                 Id = user.Id,
@@ -98,6 +153,11 @@ namespace TicketsHarbourApp.Controllers
             return View();
         }
 
+
+        public ActionResult Denied()
+        {
+            return View();
+        }
 
 
 

@@ -20,6 +20,13 @@
         <input type="submit" value="Filter" />
     </p>
 </form>
+<br></br>
+<link rel="stylesheet" href="~/css/event.css" asp-append-version="true" />
+<Link rel="stylesheet" href="~/js/event.js" asp-append-version="true" />
+
+
+<br></br>
+<br></br>
 
 <table class="table">
     <thead>
@@ -91,6 +98,8 @@
         }
     </tbody>
 </table>
+  <br><br /><br><br />
+
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

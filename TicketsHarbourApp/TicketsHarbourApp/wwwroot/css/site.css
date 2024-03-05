@@ -23,6 +23,25 @@ footer {
     padding: 10px;
     position: fixed;
     bottom: 0;
-    width: 100%;
-    
+    width: 100%; 
 }
+
+header {
+    background-color: white;
+    color: white;
+    /* padding: 20px; /*tova e za prostranstvoto okolo navbara (черното)*/
+    text-align: center;
+    margin-top: 10px;
+    width: 100%; /* ako go ugolemq mnogo, logging i logout shte se izmestqt mnogo nadqsno*/
+}
+
+.navbar {
+    padding: 18px;
+    font-weight: bold;
+}
+
+    .navbar a:hover {
+        background-color: deeppink; /* Pink background on link hover */
+        color: white; /* White text color on hover */
+        border-radius: 5px;
+    }
