@@ -40,6 +40,7 @@ namespace TicketsHarbourApp.Controllers
                     LocationName = item.Location.Name,
                     LocationId = item.LocationId,
                     Beginning= item.Beginning.ToString("dd-MMM-yyyy HH:mm", CultureInfo.InvariantCulture),
+                    Picture = item.Concert.Picture,
                     Price = item.Price,
                     Quantity = item.Quantity,
                     Discount= item.Discount
@@ -66,6 +67,7 @@ namespace TicketsHarbourApp.Controllers
                LocationName = item.Location.Name,
                LocationId = item.LocationId,
                Beginning = item.Beginning.ToString("dd-MMM-yyyy HH:mm", CultureInfo.InvariantCulture),
+               Picture = item.Concert.Picture,
                Price = item.Price,
                Quantity = item.Quantity,
                Discount = item.Discount

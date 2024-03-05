@@ -27,6 +27,7 @@ namespace TicketsHarbourApp.Models.Event
 
 
 
+
         [Range(0, 300)]
         [Display(Name = "Price")]
         public decimal Price { get; set; }
@@ -42,6 +43,9 @@ namespace TicketsHarbourApp.Models.Event
         [Display(Name = "Discount")]
         public decimal Discount { get; set; }
 
+
+        [Display(Name = "Picture")]
+        public string Picture { get; set; } = null!;
 
     }
 }
