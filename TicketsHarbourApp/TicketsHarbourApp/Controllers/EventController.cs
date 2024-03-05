@@ -32,6 +32,7 @@ namespace TicketsHarbourApp.Controllers
         public ActionResult Index(string searchConcertName, string searchLocation)
         {
             List<EventIndexVM> events = _eventService.GetEvents(searchConcertName, searchLocation)
+                .Where(item => item.Beginning > DateTime.Now)
                 .Select(item => new EventIndexVM
                 {
                     Id = item.Id,
@@ -42,8 +43,8 @@ namespace TicketsHarbourApp.Controllers
                     Beginning= item.Beginning.ToString("dd-MMM-yyyy HH:mm", CultureInfo.InvariantCulture),
                     Price = item.Price,
                     Quantity = item.Quantity,
-                    Discount= item.Discount
-
+                    Discount= item.Discount,
+                    Picture = item.Concert.Picture
                 }).ToList();  
             return this.View(events);
         }
@@ -68,7 +69,8 @@ namespace TicketsHarbourApp.Controllers
                Beginning = item.Beginning.ToString("dd-MMM-yyyy HH:mm", CultureInfo.InvariantCulture),
                Price = item.Price,
                Quantity = item.Quantity,
-               Discount = item.Discount
+               Discount = item.Discount,
+               Picture = item.Concert.Picture
            };
             return View(concert);
         }

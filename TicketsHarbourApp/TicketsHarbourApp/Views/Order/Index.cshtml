@@ -20,10 +20,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Event)
             </th>
-        
-                <th>
-            @Html.DisplayNameFor(model => model.Picture)
-            </th>
           
             <th>
                 @Html.DisplayNameFor(model => model.Quantity)
@@ -33,6 +29,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Discount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Picture)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.TotalPrice)
@@ -54,13 +53,6 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Event)
                 </td>
-             
-              <td>
-                    <img src="@Html.DisplayFor(modelItem => item.Picture)" alt="Image" width="100" />
-
-                </td>
-              
-
 
                 <td>
                     @Html.DisplayFor(modelItem => item.Quantity)
@@ -70,6 +62,10 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Discount)
+                </td>
+                <td>
+                    <img src="@Html.DisplayFor(modelItem => item.Picture)" alt="Image" width="100" />
+
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.TotalPrice)

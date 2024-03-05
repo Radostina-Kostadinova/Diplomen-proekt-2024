@@ -1,5 +1,5 @@
 ﻿
-.container {   
+.container {
     max-width: 600px;
     margin: 50px auto;
     background-color: white;
@@ -12,17 +12,16 @@ h1 {
     color: #333;
 }
 
+
 form {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     background-color: #fff;
-
 }
 
 label {
     margin-bottom: 8px;
     color: #333;
-
 }
 
 
@@ -33,6 +32,11 @@ textarea {
     border: 1px solid #ddd;
     border-radius: 4px;
 }
+
+    input[type=submit]:hover {
+        background-color: deeppink;
+    }
+
 
 button {
     background-color: #333;
@@ -48,4 +52,8 @@ button {
         background-color: #555;
     }
 
+
+
+    
+    
 

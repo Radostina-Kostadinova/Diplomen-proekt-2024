@@ -4,14 +4,11 @@
     ViewData["Title"] = "Create";
 }
 
-
-
 <link rel="stylesheet" href="~/css/contact.css" asp-append-version="true" />
-<form asp-action="Create">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
 
    
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger" ></div>
     <div style="text-align:center">
             <h2>Contact Us</h2>
             <p>Swing by for a cup of coffee, or leave us a message:</p>
@@ -38,6 +35,4 @@
     <div class="form-group">
         <input type="submit" value="Create" class="btn btn-primary" />
     </div>
-    
-
 </form>

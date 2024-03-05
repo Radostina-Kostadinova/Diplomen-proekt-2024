@@ -6,10 +6,7 @@
 
 <h1>Details</h1>
     @* Защо променливите са по два пъти написани? И ConcertId ili ConcertName*@
-<h4>EventDetailsVM</h4>
-<hr />
 <div>
-    <h4>ProductDetailsVM</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -50,6 +47,10 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Discount)
+        </dd>
+        <dd class="col-sm-10">
+            <img src="@Html.DisplayFor(model => model.Picture)" alt="Image" width="200" />
+            @*@Html.DisplayFor(model => model.Picture)*@
         </dd>
     </dl>
 </div>

@@ -45,6 +45,9 @@ namespace TicketsHarbourApp.Models.Event
         public decimal Discount { get; set; }
 
 
+        [Display(Name = "Picture")]
+        public string Picture { get; set; } = null!;
+
 
 
 

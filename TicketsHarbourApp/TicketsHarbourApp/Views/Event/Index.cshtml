@@ -20,22 +20,61 @@
         <input type="submit" value="Filter" />
     </p>
 </form>
+
 <br></br>
 <link rel="stylesheet" href="~/css/event.css" asp-append-version="true" />
 <Link rel="stylesheet" href="~/js/event.js" asp-append-version="true" />
 
-
-<br></br>
-<br></br>
+<br><br>
 
 <table class="table">
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <div class="card" style="width: 25rem">
+                        <img src="@Html.DisplayFor(modelItem => item.Picture)" class="card-img-top" alt="Image">
+                        <div class="card-body">
+                            <h5 class="card-title">@Html.DisplayFor(modelItem => item.ConcertName)</h5>
+                            <p class="card-text">@Html.DisplayFor(modelItem => item.LocationName)</p>
+                            <p class="card-text">@Html.DisplayFor(modelItem => item.Beginning)</p>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-success">Details</a>
+                            @if (this.User.Identity.IsAuthenticated && item.Quantity > 0)
+                            {
+                                <a asp-action="Create" asp-controller="Order" asp-route-id="@item.Id" class="btn btn-warning">Order</a>
+                            }
+
+                            @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
+                            {
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                            }
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br> <br/> <br> <br/>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
+@*
+                        <table class="table">
     <thead>
         <tr>
-          
             <th>
                 @Html.DisplayNameFor(model => model.ConcertName)
             </th>
-          
+
             <th>
                 @Html.DisplayNameFor(model => model.LocationName)
             </th>
@@ -51,6 +90,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Discount)%
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Picture)
+            </th>
 
         </tr>
     </thead>
@@ -61,15 +103,15 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.ConcertName)
                 </td>
-              
+
                 <td>
                     @Html.DisplayFor(modelItem => item.LocationName)
                 </td>
-                
+
                  <td>
                     @Html.DisplayFor(modelItem => item.Beginning)
                 </td>
-               
+
                 <td>
                     @Html.DisplayFor(modelItem => item.Quantity)
                 </td>
@@ -78,6 +120,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Discount) %
+                </td>
+                <td>
+                    <img src="@Html.DisplayFor(modelItem => item.Picture)" alt="Image" width="100" />
                 </td>
 
                 <td>
@@ -98,10 +143,18 @@
         }
     </tbody>
 </table>
-  <br><br /><br><br />
+                    *@
 
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
+
+
+@*
+<form asp-controller="Event" asp-action="Index" method="get" class="search-form">
+    <div class="search-container">
+        <input type="text" name="search" class="search-input" placeholder="Search by ConcertName or Location" />
+        <button type="submit" class="search-icon">
+            <!-- You can use an image or an icon for the magnifying glass here -->
+            &#128269;
+        </button>
+    </div>
+</form>
+*@
