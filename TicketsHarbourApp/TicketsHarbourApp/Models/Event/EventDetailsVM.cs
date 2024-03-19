@@ -19,10 +19,26 @@ namespace TicketsHarbourApp.Models.Event
         public int LocationId { get; set; }
         public string LocationName { get; set; } = null!;
 
+        [Required]
+        [Display(Name = "Town")]
+        public string Town { get; set; } = null!;
+
+        [Required]
+        [Display(Name = "Adress")]
+        public string Adress { get; set; } = null!;
+
+        [Required]
+        [Display(Name = "Performers")]
+        public string Performers { get; set; } = null!;
+
+        [Required]
+        [Display(Name = "Description")]
+        public string Description { get; set; } = null!;
+
 
         [Required]
         [Display(Name = "Beginning")]
-        public string Beginning { get; set; }
+        public string Beginning { get; set; } = null!;
 
 
 

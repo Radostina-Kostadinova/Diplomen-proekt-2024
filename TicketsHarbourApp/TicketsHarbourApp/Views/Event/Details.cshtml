@@ -4,62 +4,83 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+
     @* Защо променливите са по два пъти написани? И ConcertId ili ConcertName*@
-<div>
+<link rel="stylesheet" href="~/css/eventDetails.css" asp-append-version="true" />
+<div class="eventD">
+    <h1>Details</h1>
     <hr />
     <dl class="row">
-        <dd class="col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ConcertName)
-        </dd>
+        </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ConcertName)
         </dd>
 
-        <dd class="col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.LocationName)
-        </dd>
+        </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.LocationName)
+            @Html.DisplayFor(model => model.LocationName), @Html.DisplayFor(model => model.Town), @Html.DisplayFor(model => model.Adress)
         </dd>
 
-        <dd class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Beginning)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Performers)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Performers)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Beginning)
+        </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Beginning)
         </dd>
-        <dd class="col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Price)
-        </dd>
+        </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Price)
         </dd>
-        <dd class="col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Quantity)
-        </dd>
+        </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Quantity)
         </dd>
 
-        <dd class="col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Discount)
-        </dd>
+        </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Discount)
         </dd>
         <dd class="col-sm-10">
-            <img src="@Html.DisplayFor(model => model.Picture)" alt="Image" width="200" />
+            <img src="@Html.DisplayFor(model => model.Picture)" alt="Image" width="500" />
             @*@Html.DisplayFor(model => model.Picture)*@
         </dd>
-
-
+       
         @* <dd class="col-sm-10">
             @Html.DisplayFor(model => model.LocationUrl)
-        </dd>*@
+        </dd>
         <dd class="col-sm-10">
-            <iframe src="@Html.DisplayFor(model => model.LocationUrl)" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </dd> 
+        <iframe src="@Model.LocationUrl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </dd>
+        *@
+        <dd class="col-sm-10">
+            <a href="@Model.LocationUrl" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px; font-size: 18px;">Open the location in Google Maps</a>
+        </dd>
+        
+       
     </dl>
 </div>
 
@@ -68,6 +89,7 @@
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
+   
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

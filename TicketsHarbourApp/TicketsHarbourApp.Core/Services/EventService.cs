@@ -20,7 +20,6 @@ namespace TicketsHarbourApp.Core.Services
             _context = context;
         }
 
-
         public bool Create(int concertId, int locationId, DateTime beginning, decimal price, int quantity, decimal discount)
         {
             Event item = new Event

@@ -46,10 +46,6 @@ namespace TicketsHarbourApp.Controllers
 
         }
 
-
-
-
-
         // POST: OrderController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -78,8 +74,13 @@ namespace TicketsHarbourApp.Controllers
             return View();
         }
 
-    
-            // GET: OrderController
+        //Get:OrderController/Success
+        public ActionResult Success()
+        {
+            return View();
+        }
+
+        // GET: OrderController
         [Authorize(Roles = "Administrator")]
         public ActionResult Index()
         {
@@ -103,10 +104,7 @@ namespace TicketsHarbourApp.Controllers
                  }) .ToList();
             return View(orders);
         }
-
-
-
-
+        
         public ActionResult MyOrders()
         {
             string currentUserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -130,7 +128,45 @@ namespace TicketsHarbourApp.Controllers
             return View(orders);
         }
 
-        
+        [Authorize(Roles = "Administrator")]
+        //Get: OrderController/Delete/5
+        public ActionResult Delete(int id)
+        {
+            Order item = _orderService.GetOrderById(id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+            OrderDeleteVM order = new OrderDeleteVM()
+            {
+                Id = item.Id,
+                EventName = item.Event.Concert.ConcertName,
+                Quantity = item.Quantity,
+                Price = item.Price,
+                Discount = item.Discount,
+                Picture = item.Event.Concert.Picture,
+                TotalPrice=item.TotalPrice  
+            };
+            return View(order);
+        }
+
+        // POST: OrderController/Delete/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, IFormCollection collection)
+        {
+
+            var deleted = _orderService.RemoveById(id);
+            if (deleted)
+            {
+                return this.RedirectToAction("Success");
+
+            }
+            else
+            {
+                return View();
+            }
+        }
 
 
     }

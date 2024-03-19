@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Index";
 }
-<h1>Events</h1>
+<h1>Coming Events</h1>
 
 @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
 {
@@ -23,17 +23,33 @@
 
 <br></br>
 <link rel="stylesheet" href="~/css/event.css" asp-append-version="true" />
-<Link rel="stylesheet" href="~/js/event.js" asp-append-version="true" />
+<link rel="stylesheet" href="~/js/event.js" asp-append-version="true" />
 
+<br>
+
+<div class="containerSec">
+    <div class="left">
+        <img src="https://cdn.actualno.eu/actualno_2013/upload/news/2023/05/22/0552578001684746396_1975004_920x708.webp" alt="Big Image">
+    </div>
+    <div class="right">
+        <img src="https://cdns-images.dzcdn.net/images/cover/4557e7ac209a18ac59d7eb865194be4d/264x264.jpg" alt="Small Image 1">
+        <img src="https://m.netinfo.bg/media/images/50419/50419628/1255-705-dara.jpg" alt="Small Image 2">
+        <img src="https://thecomedyclub.bg/wp-content/uploads/2019/02/stand-up-comedy-Bulgaria-NDK-Filip-i-Petya-1024x683.jpg" alt="Small Image 3">
+        <img src="https://i.pinimg.com/originals/84/f6/87/84f687f96a5f0d3d917eefa96b0afcbb.jpg" alt="Small Image 4">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Lili_Ivanova_BG_Radio_Music_Awards.jpg" alt="Small Image 5">
+        <img src="https://i.ytimg.com/vi/zoa8xnzKC_U/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDMvux-_RKWVzuCiUWxvDUqA5zRLQ" alt="Small Image 6">
+        <img src="https://lastfm.freetls.fastly.net/i/u/ar0/eddedf3706155c3839146e7e6c3bac93.jpg" alt="Small Image 6">
+        <img src="https://i.ytimg.com/vi/Di-c7M7suuE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCVon43J79YnwcHLQril5XAfaJlTw" alt="Small Image 6">
+        <img src="https://cdns-images.dzcdn.net/images/cover/4557e7ac209a18ac59d7eb865194be4d/264x264.jpg" alt="Small Image 6">
+    </div>
+</div>
 <br><br>
 
-<table class="table">
-    <tbody>
+
+<div class="card-containerE">
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    <div class="card" style="width: 25rem">
+                    <div class="card" style="width: 20rem;">
                         <img src="@Html.DisplayFor(modelItem => item.Picture)" class="card-img-top" alt="Image">
                         <div class="card-body">
                             <h5 class="card-title">@Html.DisplayFor(modelItem => item.ConcertName)</h5>
@@ -42,7 +58,7 @@
                             <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-success">Details</a>
                             @if (this.User.Identity.IsAuthenticated && item.Quantity > 0)
                             {
-                                <a asp-action="Create" asp-controller="Order" asp-route-id="@item.Id" class="btn btn-warning">Order</a>
+                    <a asp-action="Create" asp-controller="Order" asp-route-id="@item.Id" class="btn btn-warning" style="background-color: dodgerblue;">Order</a>
                             }
 
                             @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
@@ -52,13 +68,10 @@
                             }
                         </div>
                     </div>
-                </td>
-            </tr>
         }
-    </tbody>
-</table>
+    </div>
 
-<br> <br/> <br> <br/>
+<br><br><br><br><br/>
 
 @section Scripts {
     @{

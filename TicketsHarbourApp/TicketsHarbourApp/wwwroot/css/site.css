@@ -15,8 +15,8 @@ html {
 
 body {
   margin-bottom: 60px;
-
 }
+
 footer {
     background-color: black;
     color: white;
@@ -25,6 +25,7 @@ footer {
     position: fixed;
     width: 70%;
 }
+
     footer p {
         color: white;
     }
@@ -33,7 +34,6 @@ footer {
     padding: 0px;
     margin:  0px;
 }
-
 
 header {
     background-color: white;

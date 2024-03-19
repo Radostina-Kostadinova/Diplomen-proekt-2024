@@ -1,1 +1,88 @@
-﻿
+﻿body{
+    text-align:center;
+}
+
+.card {
+    margin-bottom: 20px; /* Adjust the value based on the desired space between cards */
+    position: relative;
+    text-align:center;
+}
+
+    .card img {
+        width: 90%;
+        height: 70%;
+        display: inline-block;
+        margin-top: 10px;
+        margin-left:15px;
+        text-align:center;
+        object-fit: cover;
+        transition: transform 0.3s ease-in-out;
+    }
+        .card img:hover {
+            transform: scale(1.2);
+        }
+
+.btn {
+    margin-top: 10px; /* Adjust the value based on the desired space between buttons */
+}
+
+.card-body {
+    padding: 1rem;
+    margin-top: 10px; /* Adjust the value based on the desired space between image and text/buttons */
+}
+
+.card-containerE {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    gap: 30px; /* Adjust the gap based on the desired space between cards */
+}
+
+formF {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4em;
+    color: white;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+.containerSec {
+    display: flex;
+    align-items: stretch; /* Ensures equal height for both left and right containers */
+    border: 2px solid white; /* Border for the rectangle */
+    width: 90%; /* Adjust width as needed */
+    height:600px;
+    margin: 0 auto; /* Center the container */
+   /* padding: 20px; /* Add padding as needed */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.left,
+.right {
+    flex: 1;
+}
+
+    .left img {
+        width: 100%; /* Ensures the image fills its container horizontally */
+        height: 100%; /* Ensures the image fills its container vertically */
+        object-fit: cover; /* Ensures the image covers the entire container */
+    }
+
+.right {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .right img {
+        width: calc(33.33% - 0px); /* Adjust width as needed */
+        height: 199px; /* Allows the height to adjust accordingly */
+        object-fit: cover; /* Ensures the image covers the entire container */
+        /*margin-right: 10px; /* Adjust margin as needed */
+        /*margin-bottom: 10px; /* Adjust margin as needed */
+    }

@@ -67,6 +67,11 @@
                 <td>
                         @Html.DisplayFor(modelItem => item.TotalPrice)
                 </td>
+
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+
             </tr>
         }
     </tbody>

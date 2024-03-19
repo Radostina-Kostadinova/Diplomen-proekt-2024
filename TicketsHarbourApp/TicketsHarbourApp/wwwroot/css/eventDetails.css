@@ -1,0 +1,29 @@
+﻿
+div.eventD {
+    /* Add your styles here */
+    padding: 20px;
+    border: 8px solid black;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: white;
+    /* Add more styles as needed */
+}
+
+div.eventD h1 {
+    color: black;
+    font-size: 32px;
+    text-align:center;
+}
+
+    div.eventD img {
+        display: block;
+        margin: 0 auto;
+        /* Add more styles as needed */
+    }
+
+div.eventD a {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+    /* Add more styles as needed */
+}

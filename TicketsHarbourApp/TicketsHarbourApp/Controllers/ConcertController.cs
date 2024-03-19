@@ -105,9 +105,6 @@ namespace TicketsHarbourApp.Controllers
             return View(updatedConcert);
         }
 
-
-
-
         // POST: ConcertController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -125,12 +122,6 @@ namespace TicketsHarbourApp.Controllers
             }
             return View(concert);
         }
-
-
-
-
-
-
 
         // GET: ConcertController/Delete/5
         public ActionResult Delete(int id)

@@ -12,7 +12,7 @@ namespace TicketsHarbourApp.Infrastructure.Data.Domain
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(30)]
+        [MaxLength(50)]
         public string ConcertName { get; set; } = null!;
 
 

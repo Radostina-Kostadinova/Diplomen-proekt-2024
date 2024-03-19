@@ -19,6 +19,8 @@ namespace TicketsHarbourApp.Core.Contracts
 
        
         List<Event> GetEvents(string searchConcertName, string searchLocationName);
+
+
     }
 
 }

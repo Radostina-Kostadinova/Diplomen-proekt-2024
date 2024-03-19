@@ -33,6 +33,7 @@ namespace TicketsHarbourApp.Controllers
         {
             List<EventIndexVM> events = _eventService.GetEvents(searchConcertName, searchLocation)
                 .Where(item => item.Beginning > DateTime.Now)
+                  .OrderBy(item => item.Beginning)// събитията в страницата да се наредени по най-близаката за деня дата
                 .Select(item => new EventIndexVM
                 {
                     Id = item.Id,
@@ -66,6 +67,10 @@ namespace TicketsHarbourApp.Controllers
                ConcertId = item.ConcertId,
                LocationName = item.Location.Name,
                LocationId = item.LocationId,
+               Town = item.Location.Town,
+               Adress = item.Location.Address,
+               Performers = item.Concert.Performers,
+               Description = item.Concert.Description,
                Beginning = item.Beginning.ToString("dd-MMM-yyyy HH:mm", CultureInfo.InvariantCulture),
                Price = item.Price,
                Quantity = item.Quantity,
@@ -129,14 +134,14 @@ namespace TicketsHarbourApp.Controllers
             {
                 return NotFound();
             }
-
+            //podchertava new tuk, a v concert ne
             EventEditVM updatedEvent = new EventEditVM()
             {
                 Id = item.Id,
                 ConcertId = item.ConcertId,
                 LocationId = item.LocationId,
                 Beginning = DateTime.ParseExact(DateTime.Now.ToString("yyyy-MM-dd HH:mm"), "yyyy-MM-dd HH:mm", null),
-                Price = item.Price,
+            Price = item.Price,
                 Quantity = item.Quantity,
                 Discount = item.Discount
             };
@@ -147,8 +152,7 @@ namespace TicketsHarbourApp.Controllers
                 Name = b.ConcertName
             })
             .ToList();
-
-            updatedEvent.Locations = _locationService.GetLocations()
+           updatedEvent.Locations = _locationService.GetLocations()
                .Select(c => new LocationPairVM()
                {
                    Id = c.Id,
@@ -167,7 +171,7 @@ namespace TicketsHarbourApp.Controllers
                 if (ModelState.IsValid)
                 {
                     var updated = _eventService.Update(id, item.ConcertId,item.LocationId,
-                                                      item.Beginning = DateTime.ParseExact(DateTime.Now.ToString("yyyy-MM-dd HH:mm"), "yyyy-MM-dd HH:mm", null),
+                                                      item.Beginning ,
                                                        item.Price,
                                                        item.Quantity, item.Discount);
                     if (updated)
@@ -223,11 +227,30 @@ namespace TicketsHarbourApp.Controllers
 
         public IActionResult Success()
         {
-            //trqbva li mi success
            return View();
         }
-       
 
+        //AllEventsNew
+        [Authorize(Roles = "Administrator")]
+        public ActionResult AllEvents(string searchConcertName, string searchLocation)
+        {
+            List<EventIndexVM> events = _eventService.GetEvents(searchConcertName, searchLocation)
+                  .OrderBy(item => item.Beginning)// събитията в страницата да се наредени по най-близаката за деня дата
+                .Select(item => new EventIndexVM
+                {
+                    Id = item.Id,
+                    ConcertName = item.Concert.ConcertName,
+                    ConcertId = item.ConcertId,
+                    LocationName = item.Location.Name,
+                    LocationId = item.LocationId,
+                    Beginning = item.Beginning.ToString("dd-MMM-yyyy HH:mm", CultureInfo.InvariantCulture),
+                    Price = item.Price,
+                    Quantity = item.Quantity,
+                    Discount = item.Discount,
+                    Picture = item.Concert.Picture
+                }).ToList();
+            return this.View(events);
+        }
 
 
     }

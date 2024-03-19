@@ -1,4 +1,4 @@
-﻿.container {
+﻿.containerP {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -6,14 +6,6 @@
 
 .section-heading {
     color: black;
-}
-
-a {
-    color: black;
-    text-decoration: none;
-    padding: 10px;
-    margin-right: 10px;
-    display: inline-block;
 }
 
     a:hover {
@@ -29,9 +21,7 @@ p {
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
-    color: #333;
-    margin: 20px;
-    line-height: 1.6;
+   
 }
 
 h1, h2 {
@@ -53,4 +43,5 @@ a {
     a:hover {
         text-decoration: underline;
     }
+
 

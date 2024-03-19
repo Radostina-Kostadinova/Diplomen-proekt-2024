@@ -25,7 +25,7 @@ namespace TicketsHarbourApp.Models.Event
 
         [Required]
         [Display(Name = "Beginning")]
-        public string Beginning { get; set; }
+        public string Beginning { get; set; }= null!;
 
 
 
