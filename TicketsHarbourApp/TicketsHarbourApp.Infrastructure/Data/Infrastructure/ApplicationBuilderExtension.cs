@@ -84,14 +84,14 @@ namespace TicketsHarbourApp.Infrastructure.Data.Infrastructure
 
             dataLocation.Locations.AddRange(new[]
             {
-               new Location{Name="Krakra", Town="Pernik",Address="street Nikola Aspasiev-15"},
-               new Location{Name="Stadium V. Levski", Town="Sofia",Address="street Nikola Vapcarov-55"},
-               new Location{Name="Arena Armeec", Town="Sofia",Address="street Aceen Jordanov- 12"},
-               new Location{Name="Arena Arez", Town = "Sofia", Address = "street Nikola Vapcarov-85"},
-               new Location{Name="Arena SunnyDay", Town="Varna",Address="street Ivan Vazov-24"},
-               new Location{Name="Morksa Sirena", Town="Burgas",Address="street Sofrini Vrachanski- 21"},
-               new Location{Name="Stadium The Old Town", Town="Stara Zagora",Address="street Sirma Voevoda-3"},
-               new Location{Name="Smart Watch", Town="Ruse",Address="street  Pencho Slaveikov-9"}
+               new Location{Name="Plovdiv", Town="Plovdiv",Address="street Zapaden", LocationUrl="https://maps.app.goo.gl/vh8yMYyGA75DEKaS9"},
+               new Location{Name="Petko Enev", Town="Stara Zagora",Address="street Hadji Dimitur Asenov" ,LocationUrl="https://maps.app.goo.gl/FVhY5N6EdCvtmFoV8"},
+               new Location{Name="National Stadium Vasil Levski", Town="Sofia",Address="street Evlogi and Hristo Georgievi", LocationUrl = "https://maps.app.goo.gl/b76qxV47TFiPjpT28"},
+               new Location{Name="Aleksander Shismanov", Town = "Sofia", Address = "street Koloman" , LocationUrl = "https://maps.app.goo.gl/W9hnQ7f7c2sBhnnG6"},
+               new Location{Name="Stadion Spartak", Town="Varna",Address="street Varna Center" , LocationUrl = "https://maps.app.goo.gl/tdr54Se9ogkZmk3K7"},
+               new Location{Name="Chernomorec", Town="Burgas",Address="street Lovna 26" , LocationUrl = "https://maps.app.goo.gl/GeCNZJhsep3YKaFq7"},
+               new Location{Name="Minior", Town="Pernik",Address="street Fiziculturna" , LocationUrl = "https://maps.app.goo.gl/YzZmn8V3mE2PxDUP6"},
+               new Location{Name="Dunav", Town="Ruse",Address="street Rodina" , LocationUrl = "https://maps.app.goo.gl/96Pu2pf7N6muyNz38"}
         });
             dataLocation.SaveChanges();
         }

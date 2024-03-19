@@ -70,7 +70,8 @@ namespace TicketsHarbourApp.Controllers
                Price = item.Price,
                Quantity = item.Quantity,
                Discount = item.Discount,
-               Picture = item.Concert.Picture
+               Picture = item.Concert.Picture,
+               LocationUrl=item.Location.LocationUrl
            };
             return View(concert);
         }

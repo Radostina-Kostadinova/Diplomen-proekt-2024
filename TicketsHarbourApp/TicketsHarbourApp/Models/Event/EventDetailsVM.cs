@@ -20,7 +20,6 @@ namespace TicketsHarbourApp.Models.Event
         public string LocationName { get; set; } = null!;
 
 
-
         [Required]
         [Display(Name = "Beginning")]
         public string Beginning { get; set; }
@@ -45,6 +44,10 @@ namespace TicketsHarbourApp.Models.Event
 
         [Display(Name = "Picture")]
         public string Picture { get; set; } = null!;
+
+
+        [Display(Name = "LocationUrl")]
+        public string LocationUrl { get; set; } = null!;
 
 
     }

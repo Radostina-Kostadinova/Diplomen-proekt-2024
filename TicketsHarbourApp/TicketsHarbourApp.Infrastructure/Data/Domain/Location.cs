@@ -25,6 +25,10 @@ namespace TicketsHarbourApp.Infrastructure.Data.Domain
         [MaxLength(50)]
         public string Address { get; set; } = null!;
 
+
+        [Required]
+        public string LocationUrl { get; set; } = null!;
+
         public virtual ICollection<Event> Events { get; set; } = new List<Event>();
 
 
