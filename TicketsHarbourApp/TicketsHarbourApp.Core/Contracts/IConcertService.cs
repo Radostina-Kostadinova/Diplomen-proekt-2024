@@ -13,13 +13,10 @@ namespace TicketsHarbourApp.Core.Contracts
 
         bool Update(int concertId, string concertName, string performers, string description, string Picture);
 
-        //NOVO RemoveById 
         bool RemoveById(int concertId);
         List<Concert> GetConcerts();
         Concert GetConcertById(int concertId);
         List<Event> GetEventsByConcert(int concertId);
-      
-
       
     }
 }

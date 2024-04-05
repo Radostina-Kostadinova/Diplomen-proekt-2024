@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using TicketsHarbourApp.Core.Contracts;
 using TicketsHarbourApp.Core.Services;
@@ -7,6 +8,7 @@ using TicketsHarbourApp.Models.Client;
 
 namespace TicketsHarbourApp.Controllers
 {
+    [Authorize(Roles="Administrator")]
     public class ClientController:Controller
     {
 
@@ -52,53 +54,7 @@ namespace TicketsHarbourApp.Controllers
         }
 
 
-        // GET: ClientController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: ClientController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: ClientController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: ClientController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: ClientController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        
 
         // GET: ClientController/Delete/5 
         public ActionResult Delete(string id)
@@ -125,10 +81,6 @@ namespace TicketsHarbourApp.Controllers
             return View(userToDelete);
         }
 
-
-
-
-
         // POST: ClientController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -147,7 +99,6 @@ namespace TicketsHarbourApp.Controllers
             }
             return NotFound();
         }
-
 
         public ActionResult Success()
         {

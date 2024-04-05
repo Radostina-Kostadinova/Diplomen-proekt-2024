@@ -24,8 +24,5 @@ namespace TicketsHarbourApp.Infrastructure.Data.Domain
         public string Message { get; set; } = null!;
 
 
-       
-
-
     }
 }

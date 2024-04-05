@@ -30,7 +30,6 @@ namespace TicketsHarbourApp.Core.Services
             };
             _context.Concerts.Add(item);
             return _context.SaveChanges() != 0;
-
         }
 
         public bool Update(int concertId, string concertName, string performers, string description, string Picture)

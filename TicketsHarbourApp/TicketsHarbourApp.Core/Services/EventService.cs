@@ -77,7 +77,6 @@ namespace TicketsHarbourApp.Core.Services
             }
             _context.Remove(item);
             return _context.SaveChanges() != 0;
-            //item trqbva li da e event ili da si ostane item
         }
 
      
@@ -88,9 +87,6 @@ namespace TicketsHarbourApp.Core.Services
             {
                 return false;
             }
-           // item.ConcertId = concertId;
-           // item.LocationId = locationId;
-            
             item.Concert = _context.Concerts.Find(concertId);
             item.Location = _context.Locations.Find(locationId);
 
@@ -101,7 +97,6 @@ namespace TicketsHarbourApp.Core.Services
 
             _context.Update(item);
             return _context.SaveChanges() != 0;
-            //zahto item ne moje da se podmeni s event kato v concert e concert, a ne item
         }
 
 

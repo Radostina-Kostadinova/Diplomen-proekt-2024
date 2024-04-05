@@ -24,7 +24,5 @@ namespace TicketsHarbourApp.Controllers
             return View(statistics);
 
         }
-
-
     }
 }

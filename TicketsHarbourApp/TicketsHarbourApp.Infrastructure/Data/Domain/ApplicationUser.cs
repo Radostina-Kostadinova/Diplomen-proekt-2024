@@ -26,6 +26,6 @@ namespace TicketsHarbourApp.Infrastructure.Data.Domain
         [MaxLength(50)]
         public string Address { get; set; } = null!;
 
-        public virtual IEnumerable<Contact> Contacts { get; set; } = new List<Contact>();
+
     }
 }

@@ -11,7 +11,7 @@
         public int EventId { get; set; }
         public string Event { get; set; } = null!;
         public string Picture { get; set; } = null!;
-
+        public string Beginning { get; set; } = null!;
 
         public int Quantity { get; set; }
         public decimal Price { get; set; }

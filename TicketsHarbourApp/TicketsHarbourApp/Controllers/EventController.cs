@@ -105,7 +105,6 @@ namespace TicketsHarbourApp.Controllers
         // POST: EventController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]       
-        //taka li e i zahto ne iska da raboti,ako vmesto item napisha event
         public ActionResult Create([FromForm] EventCreateVM item)
         {
             if (ModelState.IsValid)
@@ -126,7 +125,6 @@ namespace TicketsHarbourApp.Controllers
 
 
         // GET: EventController/Edit/5
-        //ne raboti,ako vmesto item pishe event
         public ActionResult Edit(int id)
         {
             Event item = _eventService.GetEventById(id);
@@ -134,7 +132,6 @@ namespace TicketsHarbourApp.Controllers
             {
                 return NotFound();
             }
-            //podchertava new tuk, a v concert ne
             EventEditVM updatedEvent = new EventEditVM()
             {
                 Id = item.Id,
@@ -222,7 +219,6 @@ namespace TicketsHarbourApp.Controllers
             {
                 return View();
             }
-            //napraven e metod RemoveById v services i contracts
         }
 
         public IActionResult Success()
@@ -251,7 +247,5 @@ namespace TicketsHarbourApp.Controllers
                 }).ToList();
             return this.View(events);
         }
-
-
     }
 }

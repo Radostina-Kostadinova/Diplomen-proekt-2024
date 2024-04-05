@@ -96,6 +96,7 @@ namespace TicketsHarbourApp.Controllers
                 EventId = x.EventId,
                 Event=x.Event.Concert.ConcertName,
                 Picture= x. Event.Concert.Picture,
+                Beginning = x.Event.Beginning.ToString("dd-MMM-yyyy hh:mm", CultureInfo.InvariantCulture),
                 OrderDate = x.OrderDate.ToString("dd-MMM-yyyy hh:mm", CultureInfo.InvariantCulture),
                 Quantity = x.Quantity,
                 Price =x. Price,
@@ -119,6 +120,7 @@ namespace TicketsHarbourApp.Controllers
             EventId = x.EventId,
             Event = x.Event.Concert.ConcertName,
             Picture= x. Event.Concert.Picture,
+            Beginning=x.Event.Beginning.ToString("dd-MMM-yyyy hh:mm", CultureInfo.InvariantCulture),
             OrderDate = x.OrderDate.ToString("dd-MMM-yyyy hh:mm", CultureInfo.InvariantCulture),
             Quantity = x.Quantity,
             Price = x.Price,
@@ -128,7 +130,7 @@ namespace TicketsHarbourApp.Controllers
             return View(orders);
         }
 
-        [Authorize(Roles = "Administrator")]
+        
         //Get: OrderController/Delete/5
         public ActionResult Delete(int id)
         {

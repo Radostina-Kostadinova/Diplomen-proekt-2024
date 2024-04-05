@@ -107,10 +107,10 @@ namespace TicketsHarbourApp.Infrastructure.Data.Infrastructure
 
             dataConcert.Concerts.AddRange(new[]
             {
-           new Concert{ConcertName="MolecAlbum", Performers="Molec",Description=" 12 February", Picture="" },
-           new Concert{ConcertName="Virgo & TRF Album",Performers="Virgo & TRF ",Description="18 March" },
-           new Concert{ConcertName="Maneskin Album", Performers="Maneskin",Description="08 April" },
-           new Concert{ConcertName="Ari Abdul Album", Performers="Ari Abdul",Description="25 May" },
+           new Concert{ConcertName="MolecAlbum", Performers="Molec",Description=" Molec is a new Bulgarian group!", Picture="" },
+           new Concert{ConcertName="Virgo & TRF Album",Performers="Virgo & TRF ",Description=" Make the night fun with Virgo & TRF!" },
+           new Concert{ConcertName="Maneskin Album", Performers="Maneskin",Description="Trust the genre with Maneskin!" },
+           new Concert{ConcertName="Ari Abdul Album", Performers="Ari Abdul",Description="She is a popular star in Canada as well as USA" },
             });
             dataConcert.SaveChanges();
         }

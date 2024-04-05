@@ -16,10 +16,9 @@ namespace TicketsHarbourApp.Controllers
             this._concertService = concertService;
         }
 
-
         // GET: ConcertController
-        [AllowAnonymous]
-        //da go mahna li tozi atribut i nad Details???
+
+        //da go mahna li tozi atribut   [AllowAnonymous]  nad dvata Details???
         public ActionResult Index()
         {
             List<ConcertIndexVM> concerts = _concertService.GetConcerts()
@@ -35,9 +34,7 @@ namespace TicketsHarbourApp.Controllers
             return this.View(concerts);
         }
 
-
         // GET: ConcertController/Details/5
-        [AllowAnonymous]
         public ActionResult Details(int id)
         {
             Concert item = _concertService.GetConcertById(id);
@@ -56,15 +53,11 @@ namespace TicketsHarbourApp.Controllers
             return View(concert);
         }
 
-
-
         // GET: ConcertController/Create
         public ActionResult Create()
         {
             return View();
         }
-
-
 
         // POST: ConcertController/Create
         [HttpPost]
@@ -157,16 +150,12 @@ namespace TicketsHarbourApp.Controllers
             {
                 return View();
             }
-            //napraven e metod RemoveById v services i contracts
         }
         public IActionResult Success()
         {
 
             return View();
         }
-       
-        //trqbva li mi success
-
 
     }
 }

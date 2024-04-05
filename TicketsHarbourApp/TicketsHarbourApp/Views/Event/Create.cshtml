@@ -10,20 +10,8 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-           @*  <div class="form-group">
-                <label asp-for="ConcertId" class="control-label"></label>
-                <input asp-for="ConcertId" class="form-control" />
-                <span asp-validation-for="ConcertId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-            <label asp-for="LocationId" class="control-label"></label>
-            <input asp-for="LocationId" class="form-control" />
-            <span asp-validation-for="LocationId" class="text-danger"></span>
-            </div>
-            *@
             <div class="form-group">
                 <label asp-for="ConcertId" class="control-label"></label>
-                @*<input asp-for="ConcertId" class="form-control" />*@
                 <select asp-for="ConcertId" class="form-control text-center">
                     @foreach (var concert in Model.Concerts)
                     {
@@ -41,7 +29,6 @@
                     @foreach (var location in Model.Locations)
                     {
                         <option value=" @location.Id">@location.Location</option>
-                        @*vmesto @location.Name e @location.Location! *@
                     }
                 </select>
                 <span asp-validation-for="LocationId" class="text-danger"></span>

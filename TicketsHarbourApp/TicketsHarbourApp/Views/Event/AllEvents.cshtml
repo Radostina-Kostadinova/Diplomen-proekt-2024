@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 <h1>All events</h1>
-<br>    
+<br>
 
 <table cellpadding="10">
     <thead>
@@ -20,7 +20,7 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr style="padding:10px">
+            <tr style="padding:10px; border-bottom: 1px solid #ffffff;">
                 <td>@item.ConcertName</td> 
                 <td>@item.LocationName</td>
                 <td>@item.Beginning</td>
@@ -33,4 +33,4 @@
     </tbody>
 </table>
 
-<br><br>
+<br><br><br><br><br><br><br>
