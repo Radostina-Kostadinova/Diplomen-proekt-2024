@@ -7,18 +7,25 @@
 
     <style>
         body {
-        background-image: url('https://static.vecteezy.com/system/resources/thumbnails/000/267/131/small/party_people_on_gold_bokeh_lights_background_0810.jpg'); /* Specify the path to your image */
-            background-size: cover; 
+        background-image: url("/1.jpg");
+        
+
+        /* Specify the path to your image */
+       @* <img src="~/css/favicon.ico">
+       background-image: url('https://static.vecteezy.com/system/resources/thumbnails/000/267/131/small/party_people_on_gold_bokeh_lights_background_0810.jpg'); /* Specify the path to your image */*@
+        
+       
+       background-size: cover; 
             background-position: center; 
-            background-repeat: no-repeat; 
+            background-repeat: no-repeat;
         }
     </style>
 
 
-<div class="row">
+<div class="row justify-content-center align-items-center">
     <div class="col-md-4">
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h2 style="text-align:center">Regetser in our site!</h2>
+            <h2 style="text-align:center; color:white;">Regetser in our site!</h2>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 

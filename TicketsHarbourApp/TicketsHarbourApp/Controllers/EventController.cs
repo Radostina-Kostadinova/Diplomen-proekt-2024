@@ -231,7 +231,7 @@ namespace TicketsHarbourApp.Controllers
         public ActionResult AllEvents(string searchConcertName, string searchLocation)
         {
             List<EventIndexVM> events = _eventService.GetEvents(searchConcertName, searchLocation)
-                  .OrderBy(item => item.Beginning)// събитията в страницата да се наредени по най-близаката за деня дата
+                  .OrderBy(item => item.Beginning)// events on the page to be arranged by the date closest to the day
                 .Select(item => new EventIndexVM
                 {
                     Id = item.Id,
